@@ -5,7 +5,7 @@
 
 #define clear() system("")
 
-typedef struct
+struct User
 {
     int id;
     char name[20];
@@ -14,15 +14,15 @@ typedef struct
     char email[50];
     char password[20];
     char address[100];
-} User;
+} ;
 
-typedef struct
+struct Category
 {
     int id;
     char title[20];
     char description[100];
     int parentId;
-} Category;
+};
 
 typedef struct
 {
@@ -34,15 +34,15 @@ typedef struct
     int categoryId;
 } Product;
 
-typedef struct
+struct Basket
 {
     int id;
     int productId;
     int userId;
     int count;
-} Basket;
+};
 
-typedef struct
+struct Order
 {
     int id;
     int serial;
@@ -51,7 +51,7 @@ typedef struct
     int paymentDate;
     int userId;
     int product_Ids[100];
-} Order;
+};
 
 int Random()
 {
@@ -79,9 +79,10 @@ Product products[100] =
         {3, "t-shirt", "this is t-shirt", 90000, 15, 3}};
 
 Basket baskets[100] =
-    {
-        {1, 1, 1, 5},
-        {2, 2, 1, 3}};
+{
+     {1, 1, 1, 5},
+     {2, 2, 1, 3}
+};
 
 void addProduct()
 {
